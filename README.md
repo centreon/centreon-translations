@@ -38,8 +38,9 @@ You can use an old (Centreon web 2.6 translation in progress).
 1. Checkout files from '2.6' branch
 2. Merge this translation with pot files using commands:
 
-  $ msgmerge old_messages.po messages.pot -o <my_dir>/messages.po
-  $ msgmerge old_help.po help.pot -o  <my_dir>/help.po 
+   $ msgmerge old_messages.po messages.pot -o <my_dir>/messages.po
+
+   $ msgmerge old_help.po help.pot -o  <my_dir>/help.po 
 
 ### Use existing language directory ###
 
