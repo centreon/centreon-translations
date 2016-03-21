@@ -76,6 +76,7 @@ Replace '/usr/share/centreon' by installatino dir of your Centreon Web UI.
 3. Compile and install your language files:
 
   $ msgfmt message.po -o /usr/share/centreon/www/locale/`locale | grep LC_MESSAGES | cut -d \" -f 2`/LC_MESSAGES/message.mo
+
   $ msgfmt help.po -o /usr/share/centreon/www/locale/`locale | grep LC_MESSAGES | cut -d \" -f 2`/LC_MESSAGES/message.mo
 
 4. Restart Apache:
