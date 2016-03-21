@@ -19,15 +19,8 @@ operational.
 
 ## How to participate in the translation of Centreon ##
 
-1. First clone this git repo to your server using command:
-
-  $ git clone https://github.com/centreon/centreon-translations.git
-
-2. And select your major version of Centreon web:
-
-  $ git branch -r
-  $ git checkout -b <branch>
-
+1. First clone this git project on github:
+2. Select your major version of Centreon web:
 3. Use existing language directory or create new one
 
 ### Create new language directory ###
@@ -37,6 +30,7 @@ operational.
 3. Paste message.pot and help.pot from root directory in this one and rename them as message.po and help.po
 4. Edit file using a PO editor and start translation
 5. Commit your work
+6. Send us a pull request
 
 #### Start with existing old translation files ####
 
@@ -53,6 +47,7 @@ If translation files already exist, just continue to translation missing string:
 
 1. Edit file using a PO editor and start translation
 2. Commit your work
+3. Send us a pull request
 
 ## Use a translation ##
 
