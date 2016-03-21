@@ -44,8 +44,8 @@ You can use an old (Centreon web 2.6 translation in progress).
 1. Checkout files from '2.6' branch
 2. Merge this translation with pot files using commands:
 
-  # msgmerge old_messages.po messages.pot -o <my_dir>/messages.po
-  # msgmerge old_help.po help.pot -o  <my_dir>/help.po 
+  $ msgmerge old_messages.po messages.pot -o <my_dir>/messages.po
+  $ msgmerge old_help.po help.pot -o  <my_dir>/help.po 
 
 ### Use existing language directory ###
 
@@ -69,7 +69,7 @@ If you want to translate your Centreon Web UI you have to donload translation fi
 
 3. Create the local directory for Centreon Web UI:
 
-  # mkdir -p /usr/share/centreon/www/locale/`locale | grep LC_MESSAGES | cut -d \" -f 2`/LC_MESSAGES
+  $ mkdir -p /usr/share/centreon/www/locale/`locale | grep LC_MESSAGES | cut -d \" -f 2`/LC_MESSAGES
 
 Replace '/usr/share/centreon' by installatino dir of your Centreon Web UI.
 
