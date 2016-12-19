@@ -1,0 +1,87 @@
+##
+## Copyright 2016 Centreon
+##
+## All rights reserved.
+##
+
+%define debug_package %{nil}
+%define centreon_www /usr/share/centreon/www
+
+Name:           centreon-lang-fr_FR
+Version:        @VERSION@
+Release:        @RELEASE@%{?dist}
+Summary:        Centreon Web French language pack
+
+Group:          System Environment/Base
+License:        GPLv2
+URL:            https://github.com/centreon/centreon-translations
+Source0:        %{name}-%{version}.tar.gz
+BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+
+Requires:       centreon >= @VERSION@
+BuildArch:      noarch
+
+%description
+This is the french language pack for Centreon @VERSION@ branch
+
+%prep
+%setup -q
+
+%build
+
+%install
+rm -rf $RPM_BUILD_ROOT
+%{__install} -d $RPM_BUILD_ROOT%{centreon_www}/locale/fr_FR.UTF-8/LC_MESSAGES
+%{__cp} LC_MESSAGES/messages.mo $RPM_BUILD_ROOT%{centreon_www}/locale/fr_FR.UTF-8/LC_MESSAGES/messages.mo
+%{__cp} LC_MESSAGES/help.mo $RPM_BUILD_ROOT%{centreon_www}/locale/fr_FR.UTF-8/LC_MESSAGES/help.mo
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+%files
+%attr(-,apache,apache) %{centreon_www}/locale/fr_FR.UTF-8
+
+%changelog
+* Mon Mar 21 2016 Laurent Pinsivy <lpinsivy@centreon.com> 2.7.0-3
+- Update sources
+
+* Tue Dec 15 2015 Laurent Pinsivy <lpinsivy@centreon.com> 2.7.0-2
+- Update sources
+
+* Fri Nov 20 2015 Laurent Pinsivy <lpinsivy@centreon.com> 2.7.0-1
+- Full translation of help.po
+- Full translation of messages.po
+
+* Mon Feb 24 2014 Laurent Pinsivy <lpinsivy@merethis.com> 2.5.0-1
+- Full translation of help.po
+- Full translation of messages.po
+
+* Mon Apr 29 2013 Laurent Pinsivy <lpinsivy@merethis.com> 2.4.2-2
+- Full translation of help.po
+- Full translation of messages.po
+
+* Mon Apr 29 2013 Laurent Pinsivy <lpinsivy@merethis.com> 2.4.1-2
+- Full translation of help.po
+- Full translation of messages.po
+
+* Mon Apr 29 2013 Laurent Pinsivy <lpinsivy@merethis.com> 2.4-2
+- Full translation of help.po
+- Full translation of messages.po
+
+* Fri Nov 30 2012 Laurent Pinsivy <lpinsivy@merethis.com> 2.4-1
+- Update help.po from translate.centreon.com/trunk [50% done]
+- update message.mo from translate.centreon.com/trunk [100% done]
+
+* Mon Aug 27 2012 Laurent Pinsivy <lpinsivy@merethis.com> 2.3-1
+- Add help.mo for help translation (incomplete translated file)
+- Update messages.mo file for complete translation of Centreon 2.3.9 version
+- Rename package name
+
+* Tue Jun 01 2010 Cedric Temple <ctemple@merethis.com> 1.2-1
+- Upgrade version
+
+* Wed Feb 17 2010 Cedric Temple <ctemple@merethis.com> 1.1-1
+- Upgrade version
+
+* Thu Feb 11 2010 Cedric Temple <ctemple@merethis.com> 1.0-1
+- initial version
